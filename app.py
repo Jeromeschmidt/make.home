@@ -27,20 +27,11 @@ def index():
     person3=MS_staff.find()[c]
     return render_template('index.html', person1=person1, person2=person2, person3=person3)
 
-@app.route('/index2')
-def index2():
+@app.route('/index2/<person_id>')
+def index2(person_id):
     """Show log in screen."""
-    a = random.randrange(MS_staff.count())
-    b = random.randrange(MS_staff.count())
-    c = random.randrange(MS_staff.count())
-    while((a == b) or (b == c) or (c == a)):
-        a = random.randrange(MS_staff.count())
-        b = random.randrange(MS_staff.count())
-        c = random.randrange(MS_staff.count())
-    person1=MS_staff.find()[a]
-    person2=MS_staff.find()[b]
-    person3=MS_staff.find()[c]
-    return render_template('index2.html', person1=person1)
+    person = MS_staff.find_one({'_id': ObjectId(person_id)})
+    return render_template('index2.html', person=person)
 
 def correct():
     print("!@!!!!!!!")
