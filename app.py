@@ -15,7 +15,17 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Show log in screen."""
-    return render_template('index.html', person=MS_staff.find()[random.randrange(MS_staff.count())])
+    a = random.randrange(MS_staff.count())
+    b = random.randrange(MS_staff.count())
+    c = random.randrange(MS_staff.count())
+    while((a == b) or (b == c) or (c == a)):
+        a = random.randrange(MS_staff.count())
+        b = random.randrange(MS_staff.count())
+        c = random.randrange(MS_staff.count())
+    person1=MS_staff.find()[a]
+    person2=MS_staff.find()[b]
+    person3=MS_staff.find()[c]
+    return render_template('index.html', person1=person1, person2=person2, person3=person3)
 
 #owner landing page
 @app.route('/admin')
