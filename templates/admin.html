@@ -4,6 +4,9 @@
 {% block content %}
 <h1>make.home</h1>
 <div class='row'>
+    <a href='/admin/add_person' class='btn btn-default navbar-btn'>ADD PERSON</a>
+</div>
+<div class='row'>
     {% for person in MS_staff %}
         <div class='col-md-3'>
             <img width="150" height=auto src="{{ person.image }}"></img>
