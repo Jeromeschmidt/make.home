@@ -4,16 +4,12 @@
     <div class='container-fluid'>
         <div class='col-md-3'>
             <img width="150" height=auto src="{{ person1.image }}"></img>
+            <h3><a href='/{{ person1._id }}'>{{ person1.name }}</a></h3>
         </div>
         <div class='col-md-3'>
-            <form>
-                <button type='button'>{{person2.name}}</button>
-            </form>
-            <form action='/index2'>
-                <button type='submit'>{{person1.name}}</button>
-            </form>
-            <form>
-                <button type='button'>{{person3.name}}</button>
+            <small>{{ person1.bio }}</small>
+            <form action='/'>
+                <button type='submit'>Take Quiz Again</button>
             </form>
         </div>
     </div>

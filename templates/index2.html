@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <link rel='stylesheet' href='https://bootswatch.com/4/slate/bootstrap.min.css'>
+<style>
+
+    .column {
+      float: left;
+      width: 33.33%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+</style>
+
+</head>
+
+<div class="row">
+  <div class="column">
+      {% include 'partials/announcements.html' %}
+  </div>
+  <div class="column">
+      {% include 'partials/calendar.html' %}
+  </div>
+  <div class="column">
+      {% include 'partials/bios2.html' %}
+  </div>
+</div>
+<footer class='page-footer font-small blue pt-4'>
+        {% include 'partials/footer.html' %}
+</footer>
+</html>
