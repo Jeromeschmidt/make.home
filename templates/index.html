@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <link rel="stylesheet" href="style.css" type="text/css"/> -->
+<style>
 
+    .column {
+      float: left;
+      width: 33.33%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+</style>
+
+</head>
+
+<div class="row">
+  <div class="column">
+      {% include 'partials/announcements.html' %}
+  </div>
+  <div class="column">
+      {% include 'partials/calendar.html' %}
+  </div>
+  <div class="column">
+      {% include 'partials/bios.html' %}
+  </div>
+</div>
+</html>
