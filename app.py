@@ -4,10 +4,10 @@ from bson.objectid import ObjectId
 import os
 from datetime import datetime
 
-host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/brokerage_users')
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/MS_staff')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
-users = db.brokerage_users
+MS_staff = db.MS_staff
 
 app = Flask(__name__)
 
