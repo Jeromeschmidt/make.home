@@ -1,0 +1,21 @@
+<fieldset>
+    <legend>Add Person:</legend>
+    <!-- TITLE -->
+    <div class='form-group'>
+        <label for='item-title'>Name:</label><br>
+        <input class='form-control' id='person-name' type='text' name='name' value='{{ person.name }}'/>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class='form-group'>
+        <label for='description'>Bio:</label><br>
+        <input class='form-control' id='bio' type='text' name='bio' value='{{ person.bio }}'/>
+    </div>
+
+    <div class='form-group'>
+    <label for='item-image'>Image:</label><br/>
+    <p class='text-muted'>Add image in the form of 'https://example.com/personID.jpeg'</p>
+    <input class='form-control' id='person-image' name='image' rows='5' value='{{ person.image }}'/>
+    </div>
+
+</fieldset>

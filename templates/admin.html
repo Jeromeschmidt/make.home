@@ -1,0 +1,21 @@
+<!-- templates/store_index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>make.home</h1>
+<div class='row'>
+    {% for person in MS_staff %}
+        <div class='col-md-3'>
+            <img width="150" height=auto src="{{ person.image }}"></img>
+            <h3><a href='/{{ person._id }}'>{{ person.name }}</a></h3>
+            <small>{{ person.bio }}</small>
+            <form method='POST' action='/admin/{{ person._id }}/edit'>
+                <button type='submit'>EDIT</button>
+            </form>
+            <form method='POST' action='/admin/{{ person._id }}/delete'>
+                <button type='submit'>DELETE</button>
+            </form>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
