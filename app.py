@@ -15,6 +15,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Show log in screen."""
+    names = list()
     a = random.randrange(MS_staff.count())
     b = random.randrange(MS_staff.count())
     c = random.randrange(MS_staff.count())
@@ -25,7 +26,11 @@ def index():
     person1=MS_staff.find()[a]
     person2=MS_staff.find()[b]
     person3=MS_staff.find()[c]
-    return render_template('index.html', person1=person1, person2=person2, person3=person3)
+    names.append(person1["name"])
+    names.append(person2["name"])
+    names.append(person3["name"])
+    random.shuffle(names)
+    return render_template('index.html', person1=person1, names=names)
 
 @app.route('/index2/<person_id>')
 def index2(person_id):

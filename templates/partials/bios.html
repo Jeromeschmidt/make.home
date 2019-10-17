@@ -6,15 +6,39 @@
             <img width="150" height=auto src="{{ person1.image }}"></img>
         </div>
         <div class='col-md-3'>
-            <form>
-                <button type='button'>{{person2.name}}</button>
-            </form>
-            <form action='/index2/{{person1._id}}'>
-                <button type='submit'>{{person1.name}}</button>
-            </form>
-            <form>
-                <button type='button'>{{person3.name}}</button>
-            </form>
+            {% if person1.name in names[0] %}
+                <form action='/index2/{{person1._id}}'>
+                    <button type='submit'>{{names[0]}}</button>
+                </form>
+                <form>
+                    <button type='button'>{{names[1]}}</button>
+                </form>
+                <form>
+                    <button type='button'>{{names[2]}}</button>
+                </form>
+            {% endif %}
+            {% if person1.name in names[1] %}
+                <form>
+                    <button type='button'>{{names[0]}}</button>
+                </form>
+                <form action='/index2/{{person1._id}}'>
+                    <button type='submit'>{{names[1]}}</button>
+                </form>
+                <form>
+                    <button type='button'>{{names[2]}}</button>
+                </form>
+            {% endif %}
+            {% if person1.name in names[2] %}
+                <form>
+                    <button type='button'>{{names[0]}}</button>
+                </form>
+                <form>
+                    <button type='button'>{{names[1]}}</button>
+                </form>
+                <form action='/index2/{{person1._id}}'>
+                    <button type='submit'>{{names[2]}}</button>
+                </form>
+            {% endif %}
         </div>
     </div>
 </nav>
