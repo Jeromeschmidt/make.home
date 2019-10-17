@@ -3,6 +3,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 import os
 from datetime import datetime
+import random
 
 host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/MS_staff')
 client = MongoClient(host=f'{host}?retryWrites=false')
@@ -14,7 +15,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Show log in screen."""
-    return render_template('index.html')
+    return render_template('index.html', person=MS_staff.find()[random.randrange(MS_staff.count())])
 
 #owner landing page
 @app.route('/admin')
