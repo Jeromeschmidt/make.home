@@ -1,6 +1,6 @@
 # make.home
 
-### motivation
+### Motivation
 When new students first come to Make School, there are a lot of people they may not know yet. While for some this can be overwhelming, others may just want to jump in a meet as many people as they can. When looking up current solutions for this problem, I came across Stripe's internal tool built by a couple employees at a company hackathon called Stripe home.
 
 #### Features of Stripe Home:
